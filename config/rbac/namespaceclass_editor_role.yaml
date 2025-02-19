@@ -1,0 +1,27 @@
+# permissions for end users to edit namespaceclasses.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: hyperbolic-namespace-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: namespaceclass-editor-role
+rules:
+- apiGroups:
+  - cache.hyperbolic.xyz
+  resources:
+  - namespaceclasses
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cache.hyperbolic.xyz
+  resources:
+  - namespaceclasses/status
+  verbs:
+  - get

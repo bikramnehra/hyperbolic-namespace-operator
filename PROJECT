@@ -10,4 +10,14 @@ plugins:
   scorecard.sdk.operatorframework.io/v2: {}
 projectName: hyperbolic-namespace-operator
 repo: github.com/bikramnehra/hyperbolic-namespace-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: hyperbolic.xyz
+  group: cache
+  kind: NamespaceClass
+  path: github.com/bikramnehra/hyperbolic-namespace-operator/api/v1alpha1
+  version: v1alpha1
 version: "3"
